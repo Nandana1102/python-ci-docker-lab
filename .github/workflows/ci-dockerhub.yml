@@ -26,7 +26,7 @@ jobs:
           echo "$(python -c 'import site; print(site.USER_BASE)')/bin" >> $GITHUB_PATH
 
       - name: Run tests
-        run: pytest -q
+        run: pytest -m pytest -q
 
       - name: Docker meta
         id: meta
@@ -59,4 +59,4 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64
 
-          
+
